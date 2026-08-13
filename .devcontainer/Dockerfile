@@ -12,7 +12,7 @@ RUN dpkg --add-architecture arm64 \
        build-essential cmake ninja-build pkg-config \
        crossbuild-essential-arm64 gcc-aarch64-linux-gnu g++-aarch64-linux-gnu \
        python3 python3-lxml libxml2-utils \
-       qt6-base-dev-tools qt6-declarative-dev-tools qt6-tools-dev-tools qt6-l10n-tools \
+       qt6-base-dev-tools qt6-declarative-dev-tools qt6-tools-dev qt6-tools-dev-tools qt6-l10n-tools \
     && apt-get install -y --no-install-recommends \
        qt6-base-dev:arm64 \
        qt6-declarative-dev:arm64 \

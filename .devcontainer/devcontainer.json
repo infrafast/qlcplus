@@ -15,7 +15,8 @@
         "ms-vscode.cpptools",
         "ms-vscode.cmake-tools",
         "twxs.cmake",
-        "eamodio.gitlens"
+        "eamodio.gitlens",
+        "openai.chatgpt"
       ],
       "settings": {
         "cmake.configureOnOpen": false,
