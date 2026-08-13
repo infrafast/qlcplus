@@ -20,6 +20,7 @@ cmake \
   -Dqmlui=ON \
   -DQT_HOST_PATH=/usr \
   -DQT_DIR=/usr/lib/aarch64-linux-gnu/cmake/Qt6 \
+  -DQt6LinguistTools_DIR=/usr/lib/x86_64-linux-gnu/cmake/Qt6LinguistTools \
   -DCMAKE_PREFIX_PATH=/usr/lib/aarch64-linux-gnu/cmake
 
 echo
