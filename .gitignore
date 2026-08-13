@@ -57,6 +57,9 @@ CMakeLists.txt.user
 build*
 !scripts/raspi/build.sh
 
+# Raspberry Pi packaging staging tree (final archives in out/ stay trackable)
+out/rpi-arm64-rootfs/
+
 # AI and agents
 .codex
 .claude

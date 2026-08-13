@@ -15,7 +15,7 @@ cmake --build "${BUILD_DIR}" --parallel "${JOBS}"
 echo
 echo "Build complete."
 
-BIN="${BUILD_DIR}/qmlui/qlcplus5"
+BIN="${BUILD_DIR}/qmlui/qlcplus5dev"
 if [[ -f "${BIN}" ]]; then
   echo
   file "${BIN}"
@@ -25,6 +25,6 @@ if [[ -f "${BIN}" ]]; then
     echo "WARNING: executable exists but 'file' did not identify it as ARM64."
   fi
 else
-  echo "WARNING: expected qlcplus5 binary not found at ${BIN}"
+  echo "WARNING: expected qlcplus5dev binary not found at ${BIN}"
   echo "Upstream may have changed its output layout."
 fi
