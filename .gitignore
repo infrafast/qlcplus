@@ -48,10 +48,14 @@ coverage/
 
 # Development IDEs
 .vscode/
+!.vscode/
+!.vscode/settings.json
+!.vscode/tasks.json
 
 # CMake build
 CMakeLists.txt.user
 build*
+!scripts/raspi/build.sh
 
 # AI and agents
 .codex

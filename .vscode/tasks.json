@@ -1,0 +1,45 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Raspberry Pi ARM64: Check environment",
+      "type": "shell",
+      "command": "./scripts/raspi/check-env.sh",
+      "problemMatcher": []
+    },
+    {
+      "label": "Raspberry Pi ARM64: Configure QLC+ 5",
+      "type": "shell",
+      "command": "./scripts/raspi/configure.sh",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Raspberry Pi ARM64: Build QLC+ 5",
+      "type": "shell",
+      "command": "./scripts/raspi/build.sh",
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Raspberry Pi ARM64: Package",
+      "type": "shell",
+      "command": "./scripts/raspi/package.sh",
+      "problemMatcher": []
+    },
+    {
+      "label": "Raspberry Pi ARM64: Configure + Build + Package",
+      "type": "shell",
+      "command": "./scripts/raspi/all.sh",
+      "problemMatcher": ["$gcc"]
+    },
+    {
+      "label": "Raspberry Pi ARM64: Clean",
+      "type": "shell",
+      "command": "./scripts/raspi/clean.sh",
+      "problemMatcher": []
+    }
+  ]
+}

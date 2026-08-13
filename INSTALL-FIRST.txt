@@ -1,0 +1,10 @@
+QLC+ 5 / Raspberry Pi ARM64 Codespaces kit
+
+1. Unzip this archive at the ROOT of your QLC+ fork.
+2. In Codespaces: Command Palette -> "Dev Containers: Rebuild Container"
+3. Then run:
+       ./scripts/raspi/all.sh
+
+Read README-RASPBERRY-CROSSBUILD.md for details.
+
+This archive adds development-environment files only. It does not replace QLC+ source files.

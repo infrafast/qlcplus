@@ -1,0 +1,28 @@
+{
+  "name": "QLC+ 5 - Raspberry Pi ARM64 cross-build",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "remoteUser": "vscode",
+  "containerEnv": {
+    "QLC_RPI_ARCH": "arm64",
+    "QLC_RPI_TRIPLE": "aarch64-linux-gnu"
+  },
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "ms-vscode.cpptools",
+        "ms-vscode.cmake-tools",
+        "twxs.cmake",
+        "eamodio.gitlens"
+      ],
+      "settings": {
+        "cmake.configureOnOpen": false,
+        "cmake.useCMakePresets": "never",
+        "C_Cpp.default.compilerPath": "/usr/bin/aarch64-linux-gnu-g++"
+      }
+    }
+  },
+  "postCreateCommand": "bash .devcontainer/post-create.sh"
+}
