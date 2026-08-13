@@ -79,6 +79,11 @@ The installed OpenAI extension identifier was verified with
 `code --list-extensions` as `openai.chatgpt`, then added to
 `.devcontainer/devcontainer.json` for persistence across container rebuilds.
 
+Git push initially failed because the repository's pre-push hook requires Git
+LFS but `git-lfs` was missing. `git-lfs` was therefore added to the native
+package list in `.devcontainer/Dockerfile` so pushes continue working after
+future rebuilds.
+
 ### Exact next action
 
 The user must now run this VS Code command:

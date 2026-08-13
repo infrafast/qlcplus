@@ -8,7 +8,7 @@ ARG DEBIAN_FRONTEND=noninteractive
 RUN dpkg --add-architecture arm64 \
     && apt-get update \
     && apt-get install -y --no-install-recommends \
-       ca-certificates git curl file rsync zip unzip \
+       ca-certificates git git-lfs curl file rsync zip unzip \
        build-essential cmake ninja-build pkg-config \
        crossbuild-essential-arm64 gcc-aarch64-linux-gnu g++-aarch64-linux-gnu \
        python3 python3-lxml libxml2-utils \
