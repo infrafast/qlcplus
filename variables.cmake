@@ -109,7 +109,8 @@ endif ()
 set(TARGETPREFIX "${INSTALLROOT}")
 
 if (NOT ${INSTALL_ROOT} STREQUAL "/")
-    set(INSTALLROOT ${INSTALL_ROOT}/${INSTALLROOT})
+    string(REGEX REPLACE "/+$" "" _install_root "${INSTALL_ROOT}")
+    set(INSTALLROOT "${_install_root}${INSTALLROOT}")
     message("Set INSTALL_ROOT ${INSTALL_ROOT}")
 endif()
 

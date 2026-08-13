@@ -19,7 +19,7 @@ echo "No files are installed into the Codespace host OS."
 DESTDIR="${STAGE_DIR}" cmake --install "${BUILD_DIR}" --prefix /usr/local
 
 STAMP="$(date -u +%Y%m%d-%H%M%S)"
-ARCHIVE="${REPO_ROOT}/out/qlcplus5-rpi-arm64-${STAMP}.tar.gz"
+ARCHIVE="${REPO_ROOT}/out/qlcplus5dev-rpi-arm64-${STAMP}.tar.gz"
 
 tar -C "${STAGE_DIR}" -czf "${ARCHIVE}" .
 
