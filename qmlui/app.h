@@ -45,6 +45,7 @@ class ImportManager;
 class NetworkManager;
 class VideoProvider;
 class FixtureEditor;
+class StageWizard;
 class Tardis;
 class QMouseEvent;
 
@@ -239,6 +240,7 @@ private:
     VideoProvider *m_videoProvider;
     NetworkManager *m_networkManager;
     UiManager *m_uiManager;
+    StageWizard *m_stageWizard;
     Tardis *m_tardis;
 
     /*********************************************************************
