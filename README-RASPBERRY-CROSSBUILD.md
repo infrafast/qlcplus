@@ -183,3 +183,47 @@ This is intentional: it keeps compilation substantially lighter than emulating a
 QLC+ is actively developed. If its CMake options, Qt module requirements, plugins, or output paths change, the environment may need a small update.
 
 The kit deliberately avoids patching upstream source files so it remains easy to merge/rebase the official repository into your fork.
+
+
+#### to keep repository synced
+
+
+Le dépôt officiel utilise master. Pour ta branche longue durée dev-984f0e7, je recommande un merge régulier plutôt qu’un rebase : tes commits restent persistants et leurs identifiants ne changent pas.
+# Revenir sur ta branche dev
+git switch dev-984f0e7
+
+# Récupérer les nouveautés du dépôt officiel
+git fetch upstream
+
+# Sauvegarde facultative
+git branch backup/dev-984f0e7-$(date +%Y%m%d)
+
+# Intégrer le master officiel
+git merge upstream/master
+
+# Publier le résultat sur ton fork
+git push origin dev-984f0e7
+En cas de conflits :
+git status
+# Corriger les fichiers concernés
+git add <fichiers>
+git commit
+git push origin dev-984f0e7
+
+#Pour synchroniser aussi le master de ton fork :
+git switch master
+git fetch upstream
+git merge --ff-only upstream/master
+git push origin master
+
+#Puis retourne sur ta branche :
+git switch dev-984f0e7
+
+#À répéter périodiquement :
+git switch dev-984f0e7
+git fetch upstream
+git merge upstream/master
+git push origin dev-984f0e7
+
+Cela conserve tes modifications ARM64, packaging et serveur multi-client tout en intégrant les évolutions officielles. La PR #2093, elle, reste isolée sur fix/native-multiclient.
+
