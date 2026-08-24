@@ -39,16 +39,16 @@ jobs:
 
       - name: Inspect deliverables
         run: |
-          sha256sum -c out/qlcplus5dev-rpi-arm64-*.tar.gz.sha256
-          tar -tzf out/qlcplus5dev-rpi-arm64-*.tar.gz | grep -E 'BUILD-INFO.txt|usr/bin/qlcplus5dev'
-          file out/rpi-arm64-rootfs/opt/qlcplus5-dev/usr/bin/qlcplus5dev
+          sha256sum -c out/qlcplus5-master-rpi-arm64-*.tar.gz.sha256
+          tar -tzf out/qlcplus5-master-rpi-arm64-*.tar.gz | grep -E 'BUILD-INFO.txt|usr/bin/qlcplus5'
+          file out/rpi-arm64-rootfs/opt/qlcplus5-dev/usr/bin/qlcplus5
 
       - name: Upload Linux ARM64 package
         uses: actions/upload-artifact@v4
         with:
-          name: qlcplus5dev-rpi-arm64-master
+          name: qlcplus5-master-rpi-arm64
           path: |
-            out/qlcplus5dev-rpi-arm64-*.tar.gz
-            out/qlcplus5dev-rpi-arm64-*.tar.gz.sha256
+            out/qlcplus5-master-rpi-arm64-*.tar.gz
+            out/qlcplus5-master-rpi-arm64-*.tar.gz.sha256
           if-no-files-found: error
           retention-days: 14
