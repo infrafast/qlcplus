@@ -39,7 +39,7 @@ ARCHIVE="${REPO_ROOT}/out/qlcplus5-master-rpi-arm64-${STAMP}.tar.gz"
 
 tar -C "${STAGE_DIR}" -czf "${ARCHIVE}" .
 
-tar -tzf "${ARCHIVE}" | grep -Fq './opt/qlcplus5-dev/usr/bin/qlcplus5'
+tar -tzf "${ARCHIVE}" | grep -F './opt/qlcplus5-dev/usr/bin/qlcplus5' >/dev/null
 file "${BIN}" | grep -Eq 'ARM aarch64|ARM64|aarch64'
 sha256sum "${ARCHIVE}" > "${ARCHIVE}.sha256"
 
