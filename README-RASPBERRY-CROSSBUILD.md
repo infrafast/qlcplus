@@ -116,7 +116,7 @@ build-rpi-arm64/
 The expected executable is normally:
 
 ```text
-build-rpi-arm64/qmlui/qlcplus5dev
+build-rpi-arm64/qmlui/qlcplus5
 ```
 
 The build script runs `file` on it and verifies that it is an ARM64/AArch64 ELF executable.
@@ -130,8 +130,8 @@ out/
 The package script creates:
 
 ```text
-out/qlcplus5dev-rpi-arm64-YYYYMMDD-HHMMSS.tar.gz
-out/qlcplus5dev-rpi-arm64-YYYYMMDD-HHMMSS.tar.gz.sha256
+out/qlcplus5-master-rpi-arm64-YYYYMMDD-HHMMSS.tar.gz
+out/qlcplus5-master-rpi-arm64-YYYYMMDD-HHMMSS.tar.gz.sha256
 ```
 
 The archive installs below `/opt/qlcplus5-dev`. `-sa` and
