@@ -30,12 +30,12 @@ else
   exit 1
 fi
 
-if ! strings "${BIN}" | grep -Fq 'server-allow-all'; then
+if ! strings "${BIN}" | grep -F 'server-allow-all' >/dev/null; then
   echo "ERROR: compiled binary does not contain --server-allow-all."
   exit 1
 fi
 
-if ! strings "${BIN}" | grep -Fq 'Automatically grant full access to every native TCP client'; then
+if ! strings "${BIN}" | grep -F 'Automatically grant full access to every native TCP client' >/dev/null; then
   echo "ERROR: compiled binary does not contain the -sa/--server-allow-all help text."
   exit 1
 fi
