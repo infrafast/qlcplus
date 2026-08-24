@@ -18,7 +18,7 @@ echo "No files are installed into the Codespace host OS."
 # QLC+'s install layout is rooted through INSTALL_ROOT. DESTDIR adds a safe staging root.
 DESTDIR="${STAGE_DIR}" cmake --install "${BUILD_DIR}" --prefix /usr/local
 
-BIN="${STAGE_DIR}/opt/qlcplus5-dev/usr/bin/qlcplus5dev"
+BIN="${STAGE_DIR}/opt/qlcplus5-dev/usr/bin/qlcplus5"
 if [[ ! -f "${BIN}" ]]; then
   echo "ERROR: staged ARM64 binary not found: ${BIN}"
   exit 1
@@ -35,11 +35,11 @@ Native server options: -s/--server and -sa/--server-allow-all
 EOF
 
 STAMP="$(date -u +%Y%m%d-%H%M%S)"
-ARCHIVE="${REPO_ROOT}/out/qlcplus5dev-rpi-arm64-${STAMP}.tar.gz"
+ARCHIVE="${REPO_ROOT}/out/qlcplus5-master-rpi-arm64-${STAMP}.tar.gz"
 
 tar -C "${STAGE_DIR}" -czf "${ARCHIVE}" .
 
-tar -tzf "${ARCHIVE}" | grep -Fq './opt/qlcplus5-dev/usr/bin/qlcplus5dev'
+tar -tzf "${ARCHIVE}" | grep -Fq './opt/qlcplus5-dev/usr/bin/qlcplus5'
 file "${BIN}" | grep -Eq 'ARM aarch64|ARM64|aarch64'
 sha256sum "${ARCHIVE}" > "${ARCHIVE}.sha256"
 
