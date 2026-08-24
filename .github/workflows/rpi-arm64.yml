@@ -1,9 +1,6 @@
 name: Raspberry Pi 5 ARM64 master build
 
 on:
-  push:
-    branches:
-      - build/master-rpi-arm64
   workflow_dispatch:
 
 permissions:
@@ -40,7 +37,7 @@ jobs:
       - name: Inspect deliverables
         run: |
           sha256sum -c out/qlcplus5-master-rpi-arm64-*.tar.gz.sha256
-          tar -tzf out/qlcplus5-master-rpi-arm64-*.tar.gz | grep -E 'BUILD-INFO.txt|usr/bin/qlcplus5'
+          tar -tzf out/qlcplus5-master-rpi-arm64-*.tar.gz | grep -E 'BUILD-INFO.txt|usr/bin/qlcplus5' >/dev/null
           file out/rpi-arm64-rootfs/opt/qlcplus5-dev/usr/bin/qlcplus5
 
       - name: Upload Linux ARM64 package
