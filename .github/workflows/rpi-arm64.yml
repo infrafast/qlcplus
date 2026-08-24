@@ -1,6 +1,9 @@
 name: Raspberry Pi 5 ARM64 master build
 
 on:
+  push:
+    branches:
+      - build/master-rpi-arm64
   workflow_dispatch:
 
 permissions:
