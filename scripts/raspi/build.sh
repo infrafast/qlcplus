@@ -15,7 +15,7 @@ cmake --build "${BUILD_DIR}" --parallel "${JOBS}"
 echo
 echo "Build complete."
 
-BIN="${BUILD_DIR}/qmlui/qlcplus5dev"
+BIN="${BUILD_DIR}/qmlui/qlcplus5"
 if [[ -f "${BIN}" ]]; then
   echo
   file "${BIN}"
@@ -26,7 +26,7 @@ if [[ -f "${BIN}" ]]; then
     exit 1
   fi
 else
-  echo "ERROR: expected qlcplus5dev binary not found at ${BIN}"
+  echo "ERROR: expected qlcplus5 binary not found at ${BIN}"
   exit 1
 fi
 
