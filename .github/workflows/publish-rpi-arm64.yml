@@ -33,7 +33,7 @@ jobs:
         with:
           tag_name: rpi-arm64-master-20260824
           name: QLC+ 5 Raspberry Pi ARM64 — master 2026-08-24
-          target_commitish: d608c3bd06374e54f90b724cd2b350f0b73cb5f6
+          target_commitish: master
           body: |
             QLC+ 5 Linux ARM64 build for Raspberry Pi 5.
 
