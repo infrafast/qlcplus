@@ -1,0 +1,47 @@
+name: Publish permanent Raspberry Pi ARM64 release
+
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - master
+    paths:
+      - .github/workflows/publish-rpi-arm64.yml
+
+permissions:
+  actions: read
+  contents: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    steps:
+      - name: Download validated ARM64 artifact
+        uses: actions/download-artifact@v4
+        with:
+          name: qlcplus5-master-rpi-arm64
+          path: out
+          repository: infrafast/qlcplus
+          run-id: 32739999778
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Verify package checksum
+        run: cd out && sha256sum -c qlcplus5-master-rpi-arm64-20260824-145226.tar.gz.sha256
+
+      - name: Publish permanent GitHub release
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: rpi-arm64-master-20260824
+          name: QLC+ 5 Raspberry Pi ARM64 — master 2026-08-24
+          target_commitish: d608c3bd06374e54f90b724cd2b350f0b73cb5f6
+          body: |
+            QLC+ 5 Linux ARM64 build for Raspberry Pi 5.
+
+            Source commit: d608c3bd06374e54f90b724cd2b350f0b73cb5f6
+            Includes upstream PR #2094 native multi-client support.
+            Verified option: -sa / --server-allow-all
+            Installation root: /opt/qlcplus5-dev
+            SHA-256: fbd771af14a1ea9e5f6dcf60e5bf78cbea6f18fdfeec6c913ae5ea010f54d8bb
+          files: |
+            out/qlcplus5-master-rpi-arm64-20260824-145226.tar.gz
+            out/qlcplus5-master-rpi-arm64-20260824-145226.tar.gz.sha256
